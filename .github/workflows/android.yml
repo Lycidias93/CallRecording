@@ -22,9 +22,6 @@ jobs:
   build:
     name: Build on ${{ matrix.os }}
     runs-on: ${{ matrix.os }}
-    # Pull-request and manual validation need only Ubuntu; pushes to master
-    # retain cross-platform verification.
-    if: github.event_name == 'push' || matrix.os == 'ubuntu-latest'
     strategy:
       fail-fast: false
       matrix:
