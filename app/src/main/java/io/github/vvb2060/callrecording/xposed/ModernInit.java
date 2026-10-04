@@ -19,6 +19,11 @@ public class ModernInit extends XposedModule {
                     processName,
                     param.getDefaultClassLoader(),
                     "modern");
+            DisclosureAudioFilesHooks.install(
+                    param.getPackageName(),
+                    processName,
+                    param.getDefaultClassLoader(),
+                    "modern-audiofiles");
             log(Log.WARN, TAG, "Modern API entry active");
         } catch (Throwable t) {
             log(Log.ERROR, TAG, "Modern API entry failed", t);
